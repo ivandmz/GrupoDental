@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grupo Dental: Contacto</title>
+    <link rel="StyleSheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400&family=Ubuntu:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="img/ico/logo.ico">
+    <script src="https://kit.fontawesome.com/e63bcbc187.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="idheader"></div>
+    <main>
+        <div class="formu">
+            <!--<form action="mailto:direccion@correo.com" method="POST" enctype="text/plain">-->
+            <div>
+                <form action="show_data.html" target="_blank" id="form">
+                    <h3>Formulario de consulta</h3>
+                    <div>
+                        <label for="nombre">Nombre: </label><br>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+                    <div>
+                        <label for="apellido">Apellido: </label><br>
+                        <input type="text" id="apellido" name="apellido">
+                    </div>
+                    <div>
+                        <label for="telefono">Telefono: </label><br>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div>
+                        <label for="horario-contacto">Horario de contacto: </label><br>
+                        <select name="horario-contacto" id="horario-contacto">
+                            <option value="1">mañana</option>
+                            <option value="2">tarde</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="correo">email: </label><br>
+                        <input type="email" id="correo" name="email" size="25">
+                    </div>
+                    <div>
+                        <input type="checkbox" class="radio-checkbox" id="obraSocial" name="obraSocial">Tengo obra social.<br>
+                        <label for="num-asociado">Num Obra Social: </label><br>
+                        <input type="text" id="num-asociado" name="asociado">
+                    </div>
+                    <div>
+                        <input type="checkbox" class="radio-checkbox" name="cliente">Ya soy cliente.
+                    </div>
+                    <div>
+                        <input type="radio" class="radio-checkbox" name="tipo-consulta" value="turno">Quiero un turno
+                        <input type="radio" class="radio-checkbox" name="tipo-consulta" value="consulta">hago una
+                        consulta
+                    </div>
+                    <div>
+                        <label for="fecha">fecha del turno: </label>
+                        <input type="date" id="fecha" name="fecha-turno"><br>
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje:</label><br>
+                        <textarea id="mensaje" name="mensaje" rows="10" cols="50"
+                            placeholder="Escribe aqui tu mensaje...">
+                        </textarea>
+                    </div>
+                    <div class="botones">
+                        <input type="reset" value="Borrar">
+
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+            <div class="mapa">
+                <h3>Ubicación:</h3><br>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.1453664815745!2d-68.84968168427756!3d-32.920757377909325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e097ca5a207e7%3A0xf523c68afd354fda!2sGRUPO%20DENTAL!5e0!3m2!1ses-419!2sar!4v1647399724264!5m2!1ses-419!2sar"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+                <div>
+                    <img src="img/publi.jpg" alt="publicidad" class="publi">
+                </div>
+            </div>
+        </div>
+    </main>
+    <br>
+    <footer id="idfooter"></footer>
+    <script src="js/navfooter.js"></script>
+    <script src="js/validations.js"></script>
+</body>
+
+</html>

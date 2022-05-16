@@ -1,0 +1,689 @@
+/* CSS EXTERNO (<link> en html)*/
+
+/* Selector universal */
+* {
+	box-sizing: border-box;
+	font-family: 'Encode Sans', Ubuntu;
+	font-size: 16px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* selectores por tipo */
+html {
+	scroll-behavior: smooth;
+}
+
+header img {
+	height: 10rem;
+}
+
+nav {
+	width: 100%;
+	display: inline-flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	border-radius: 0.5rem;
+	background-color: #9fd5d1;
+	color: white;
+}
+
+nav li {
+	display: inline-flex;
+	flex-wrap: nowrap;
+	padding: 1rem;
+	overflow: hidden;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+}
+
+nav a:hover {
+	font-weight: bold;
+}
+
+nav a:visited {
+	color: white;
+}
+
+footer {
+	background-color: #9fd5d1;
+	text-align: center;
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+
+footer a {
+	color: white;
+	font-weight: bold;
+}
+
+footer a:hover {
+	color: black;
+	font-weight: bold;
+}
+
+footer a:active {
+	color: steelblue;
+}
+
+
+/* selectores de clase */
+
+.textos {
+	padding: 2rem 7rem;
+	text-align: justify;
+	text-justify: auto;
+	letter-spacing: 0.1rem;
+}
+
+/* clase para las fotos*/
+.galeria {
+	border-radius: 0.5rem;
+}
+
+.galeria-der {
+	border-radius: 0.5rem;
+	width: 200px;
+	display: inline-flex;
+	margin: 2.5rem auto;
+	justify-content: inherit; 
+}
+
+.galeria-izq {
+	border-radius: 0.5rem;
+	width: 200px;
+	display: inline-flex;
+	margin: 2.5rem auto 2.5rem;
+	justify-content: inherit;
+}
+
+.centrado {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.tabla {
+	/*Tabla de personal */
+	display: inline-flex;
+	flex-wrap: nowrap;
+	text-align: center;
+	padding: 1rem;
+	border-spacing: 1rem;
+
+}
+
+.divisores {
+	padding: 1rem 0 0 0;
+	text-align: justify;
+	margin: 2rem;
+}
+
+.divisores>h3 {
+	width: 100%;
+	padding: 1rem 3rem;
+	border-radius: .5rem;
+	font-size: 1rem;
+	background-color: lightseagreen;
+	color: white;
+}
+
+.divisores>div {
+	padding: 2rem 2rem 0;
+	display: inline-flex;
+	justify-content: flex-start;
+
+}
+
+.divisiones {
+	/* porque se me estira la franja al agregar margin?? */
+
+	width: 100%;
+	padding: 1rem 3rem;
+	border-radius: .5rem;
+	background-color: lightseagreen;
+	color: white;
+}
+
+.serv-texto {
+	padding: 0.5rem 1rem;
+	width: 60%;
+	text-align: justify;
+	text-justify: auto;
+}
+.serv-img{
+	width: 30%;
+		
+}
+
+.social {
+	display: inline-flex;
+	justify-content: end;
+	flex-wrap: nowrap;
+	right: auto;
+	vertical-align: middle;
+	background-color: white; /* a partir de aqui, para el fondo blanco*/
+	width: 1.5rem;   
+	height: 1.5rem;
+	border-radius: 0.5rem;
+}
+.social2{
+	color: lightseagreen;
+}
+
+
+
+/* ----------------------------- SLIDER --------------------------------- */
+
+@keyframes slide {
+
+	/* por lo q entiendo, al moverse un -100% se moveria la primer img hasta la 2da. por lo tanto debo tener 100% x (n-1) imgs... en este caso son 3 img, seria -200% de traslado al llegar al 100% de la animacion (0% la 1ra, -100% la 2da y -200% la 3ra img). ademas le agrego al final la 1ra imagen de nuevo para que no se corte la animacion, por lo que me queda en el 100% un traslado en X de -300% */
+	0% {
+		transform: translateX(0);
+	}
+
+	15% {
+		transform: translateX(0);
+	}
+
+	30% {
+		transform: translateX(-100%);
+	}
+
+	40% {
+		transform: translateX(-100%);
+	}
+
+	60% {
+		transform: translateX(-200%);
+	}
+
+	70% {
+		transform: translateX(-200%);
+	}
+
+	90% {
+		transform: translateX(-300%);
+	}
+
+	100% {
+		transform: translateX(-300%);
+	}
+}
+
+.contenedor {
+	max-width: 65%;
+	margin: 3rem auto;
+}
+
+.slider {
+	width: 100%;
+	position: relative;
+}
+.slider ul{
+	padding: 0;
+}
+
+.slides {
+	width: 100%;
+	position: relative;
+	border-radius: 1rem;
+	display: inline-flex;
+	overflow: hidden;
+}
+
+.slide {
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	flex-shrink: 0;
+	list-style: none;
+	overflow: hidden;
+	animation: slide 15s ease-in-out 2s infinite alternate none;
+}
+
+.slide img {	/* esto indica que img esta dentro de .slide (aunque no necesariamente sea hijo directo) */
+	width: 100%;
+}
+
+
+/*-----------------------------------------------------------*/
+/* formulario de contacto */
+label {
+	padding: 0.5rem;
+	margin: 0.3rem;
+}
+
+input {
+	margin: 0.3rem;
+	border-radius: 0.3rem;
+	size: 25;
+}
+
+select {
+	padding: 0 1rem;
+	margin: 0.3rem;
+	border-radius: 0.3rem;
+}
+
+textarea {
+	margin: 0.3rem;
+	padding: 0.3rem;
+	width: 21rem;
+	border-radius: 0.3rem;
+}
+
+.radio-checkbox {
+	margin: 1rem;
+}
+
+div>h3,
+form>h3 {
+	margin: 0 0 0.3rem;
+	color: white;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.formu {
+	width: 90%;
+	display: inline-flex;
+	justify-content: center;
+	background-color: #9fd5d1;
+	padding: 2rem;
+	margin: 3rem 2rem;
+	border-radius: 0.5rem;
+}
+
+.formu>form {
+	width: 50%;
+	justify-content: left;
+}
+
+div>iframe {
+	border: 0;
+	width: 100%;
+	height: 50%;
+}
+
+.mapa {
+	width: 50%;
+	display: block;
+	flex-wrap: wrap;
+}
+.publi{
+	margin-top: 5rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: 100%;
+	height: auto;
+}
+
+.botones {
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+/*-----------------------------------------------------------*/
+/* formulario de contacto */
+
+/* tabla show */
+
+.tabla-show{
+	width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+	text-align: center;
+	padding: 1rem;
+	border-spacing: 1rem;
+	background-color: #9fd5d1;
+	border-radius: 0.5rem;
+	margin: 1rem auto;
+}
+th{
+	border: 2px solid white;
+	color: white;
+	padding: 0.3vw;
+	border-radius: 0.3vw;
+}
+td{
+	border: 2px solid white;
+	color: white;
+	padding: 0.3vw;
+	border-radius: 0.3vw;
+}
+tr{
+	background-color: lightseagreen;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+/* Media Queries */
+
+@media only screen and (max-width: 600px) {
+	header {
+		text-align: center;
+	}
+
+	header img {
+		height: 23vw;
+	}
+
+	nav {
+		width: 100%;
+		display: block;
+		flex-wrap: wrap;
+		border-radius: 0;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	nav li {
+		display: block;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	footer {
+		width: 100%;
+		border-radius: 0;
+	}
+
+	
+	.contenedor {
+		max-width: 100%;
+		margin: 2rem auto;
+	}
+	.slides {
+		border-radius: 0;
+	}
+
+	.slide {
+		width: 100%;
+	}
+
+	.slide:active {
+		animation-play-state: paused;
+	}
+
+	.textos {
+		padding: 2.5rem;
+	}
+
+	.divisores {
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+
+	.divisores>h3 {
+		padding: 2vw;
+		border-radius: 0;
+	}
+
+	.divisores>div {
+		padding: 2vw;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.divisores>p {
+		width: 100%;
+	}
+
+	.divisiones {
+		border-radius: 0;
+		padding: 2vw;
+	}
+
+	.serv-texto {
+		padding: 2vw;
+		width: 100%;
+		margin-bottom: 2vw;
+		order: 1;
+	}
+	.serv-img{
+		width: 100%;
+		order: 2;	
+	}
+
+	.galeria-der {
+		padding: 2vw;
+		width: 70%;
+		border-radius: 5vw;
+		order: 2;
+	}
+
+	.galeria-izq {
+		padding: 2vw;
+		width: 70%;
+		border-radius: 5vw;
+		order: 2;
+	}
+
+	.social {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		
+	}
+	.social2{
+		background-color: white;
+	}
+
+	.centrado {
+		display: flexbox;
+		justify-content: stretch;
+		flex-wrap: wrap;
+	}
+
+	.tabla {
+		width: 100%;
+		display: flex;
+		justify-content: stretch;
+		flex-wrap: wrap;
+	}
+
+	label {
+		padding: 2vw;
+		margin: 1.5vw 0;
+	}
+
+	input {
+		margin: 1.5vw 0.5vw;
+		border-radius: 1vw;
+	}
+
+	textarea {
+		margin: 2vw 1vw;
+		padding: 0.5vw;
+		border-radius: 1vw;
+	}
+
+	div>h3,
+	form>h3 {
+		margin: 2vw 0;
+		font-size: 5vw;
+	}
+
+	.radio-checkbox {
+		margin: 2.5vw 0.5vw;
+		display: inline-block;
+		flex-wrap: wrap;
+	}
+
+	.formu {
+		text-align: center;
+		width: 100%;
+		display: inline-block;
+		flex-wrap: wrap;
+		background-color: #9fd5d1;
+		padding: 5vw;
+		margin: 2vw auto;
+		border-radius: 0;
+	}
+
+	.formu>form {
+		width: 100%;
+		margin-bottom: 5vw;
+	}
+
+	div>iframe {
+		display: block;
+		width: 100%;
+		height: 100vw;
+		padding: 1vw;
+		border: 0;
+	}
+	.mapa {
+		width: 100%;
+		display: block;
+		flex-wrap: wrap;
+	}
+	.publi{
+		margin-top: 10vw;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		width: 100%;
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+	header img {
+		height: 7rem;
+	}
+	nav {
+		width: 100%;
+		display: inline-flex;
+		flex-wrap: nowrap;
+	}
+
+	nav li {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.social {
+		display: inline-flex;
+		flex-wrap: wrap;
+	}
+
+	footer {
+		width: 100%;
+	}
+
+	.contenedor {
+		max-width: 80%;
+	}
+
+	.divisores {
+		width: 100%;
+		margin: 0;
+	}
+	
+
+	label {
+		padding: 2vw;
+		margin: 1.5vw 0;
+	}
+
+	input {
+		width: 40vw;
+		margin: 1.5vw 0.5vw;
+		border-radius: 1vw;
+	}
+
+	textarea {
+		margin: 2vw 1vw;
+		padding: 0.5vw;
+		border-radius: 1vw;
+	}
+
+	.galeria-der {
+		padding: 1vw;
+		width: 100%;
+		border-radius: 3vw;
+	}
+
+	.galeria-izq {
+		padding: 1vw;
+		width: 100%;
+		border-radius: 3vw;
+	}
+	.serv-texto {
+		padding: 2vw;
+		width: 60%;
+		margin-bottom: 2vw;
+		order: 2;
+	}
+	.serv-img{
+		width: 30%;
+		order: 1;	
+	}
+	
+
+	div>h3,
+	form>h3 {
+		margin: 2vw 0;
+		font-size: 5vw;
+	}
+
+	.radio-checkbox {
+		margin: 2.5vw 0.5vw;
+		display: inline-block;
+		flex-wrap: wrap;
+		width: 5vw;
+	}
+
+	.formu {
+		text-align: center;
+		width: 100%;
+		display: inline-block;
+		flex-wrap: wrap;
+		margin: 2vw auto;
+		border-radius: 1vw;
+	}
+
+	.formu>form {
+		width: 100%;
+		margin-bottom: 5vw;
+	}
+
+	div>iframe {
+		display: block;
+		width: 100%;
+		height: 50vw;
+		padding: 1vw;
+		border: 0;
+	}
+
+	.botones {
+		display: flex;
+		justify-content: space-around;
+		width: 10vw
+	}
+	.mapa {
+		width: 100%;
+		display: block;
+		flex-wrap: wrap;
+	}
+	.publi{
+		margin-top: 10vw;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		width: 100%;
+	}
+}
